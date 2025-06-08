@@ -5,13 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Componentes Lit</title>
   <link rel="stylesheet" href="../src/style.css">
+  <style>
+    :root {
+      --background-color: #ffffff;
+      --text-color: #213547;
+    }
+    
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      color: #324fff;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #324fff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      background-color: #283198;
+    }
+
+    .component-section {
+      margin-bottom: 40px;
+    }
+
+    .component-title {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      color: #324fff;
+    }
+    
+    .explanation {
+      background-color: #f0f4ff;
+      border-left: 4px solid #324fff;
+      padding: 15px;
+      margin: 30px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    code {
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+
+    .accordion-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+  
+  <script type="module" src="./components/lit-accordion.js"></script>
 </head>
 <body>
-  <div id="app">
-    <h1>Componentes Lit</h1>
-    <p>Esta página mostrará componentes web desarrollados con Lit.</p>
-    <a href="/" class="back-link">Volver a la página principal</a>
-  </div>
-  <script type="module" src="./main.js"></script>
+  <div class="container">
+    <header>
+      <h1>Musify</h1>
+      <p class="description">Disfruta de la música de tus artistas favoritos a los mejores precios</p>
+    </header>
+
+    <div class="explanation">
+      <h3>Michael Jackson: El Rey del Pop</h3>
+      <p>Michael Joseph Jackson (29 de agosto de 1958 - 25 de junio de 2009) fue un cantante, compositor, bailarín y filántropo estadounidense conocido como el <strong>Rey del Pop</strong>. Transformó la industria musical y se convirtió en una de las figuras más influyentes del siglo XX.</p>
+      <ul>
+        <li>Vendió más de 400 millones de discos en todo el mundo, siendo uno de los artistas más vendidos de la historia</li>
+        <li>Ganó 13 premios Grammy y fue nominado 38 veces</li>
+        <li>Su álbum "Thriller" (1982) es el disco más vendido de todos los tiempos con aproximadamente 70 millones de copias</li>
+        <li>Revolucionó los videos musicales y la forma de presentarse en escena</li>
+        <li>Inventó y popularizó pasos de baile icónicos como el "moonwalk"</li>
+      </ul>
+    </div>
+
+    <div class="component-section">
+      <h2 class="component-title">Conoce más sobre Michael Jackson</h2>
+      <p>Descubre datos fascinantes sobre la vida y carrera del Rey del Pop:</p>
+      
+      <div class="accordion-container">
+        <lit-accordion title="Orígenes y primeros años">
+          <p>Michael Joseph Jackson nació el 29 de agosto de 1958 en Gary, Indiana, en una familia de clase trabajadora afroamericana.</p>
+          <ul>
+            <li>Fue el octavo de diez hijos en la familia Jackson</li>
+            <li>Comenzó su carrera musical a los 5 años como miembro de los Jackson 5 junto a sus hermanos</li>
+            <li>Su padre, Joseph Jackson, era estricto y los entrenaba rigurosamente para sus actuaciones</li>
+            <li>En 1969, los Jackson 5 firmaron con Motown Records y se mudaron a Los Ángeles</li>
+            <li>Michael rápidamente se convirtió en la estrella principal del grupo con su extraordinario talento vocal y sus habilidades de baile</li>
+          </ul>
+        </lit-accordion>
+        
+        <lit-accordion title="Thriller y el éxito mundial">
+          <p>"Thriller", lanzado en 1982, catapultó a Michael Jackson a un nivel de fama sin precedentes y revolucionó la industria musical.</p>
+          <ul>
+            <li>El álbum vendió aproximadamente 70 millones de copias en todo el mundo</li>
+            <li>Produjo siete sencillos que llegaron al Top 10 del Billboard Hot 100, incluyendo "Billie Jean", "Beat It" y "Thriller"</li>
+            <li>Ganó 8 premios Grammy en una sola noche, un récord que comparte con la banda Santana</li>
+            <li>El videoclip de "Thriller" de 14 minutos revolucionó la industria de videos musicales</li>
+            <li>Su actuación del "moonwalk" en el especial de televisión Motown 25 en 1983 se convirtió en un momento icónico de la cultura pop</li>
+          </ul>
+        </lit-accordion>
+        
+        <lit-accordion title="Legado e influencia global">
+          <p>El impacto de Michael Jackson trasciende la música, influyendo en la cultura popular global durante más de cuatro décadas.</p>
+          <ul>
+            <li>Transformó el arte de los videos musicales y abrió el camino para la música pop moderna</li>
+            <li>Su influencia se extendió más allá de la industria musical, impactando en la danza, la moda y la conciencia social</li>
+            <li>En África, su influencia fue comparada con la de Nelson Mandela por su capacidad de inspirar y unir a audiencias diversas</li>
+            <li>Es considerado la columna vertebral de la industria K-pop en Corea del Sur, influyendo en innumerables artistas</li>
+            <li>Rolling Stone describió su influencia como "tan vasta y de largo alcance como la del oxígeno y la gravedad"</li>
+          </ul>
+        </lit-accordion>
+      </div>
 </body>
 </html>

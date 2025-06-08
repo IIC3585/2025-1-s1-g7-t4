@@ -3,15 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Components Nativos</title>
+  <title>Componentes Web Nativos</title>
   <link rel="stylesheet" href="../src/style.css">
+  <style>
+    :root {
+      --background-color: #ffffff;
+      --text-color: #213547;
+    }
+    
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      color: #ff3e00;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #ff3e00;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      background-color: #d33200;
+    }
+
+    .component-section {
+      margin-bottom: 40px;
+    }
+
+    .component-title {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      color: #ff3e00;
+    }
+    
+    .explanation {
+      background-color: #fff4f0;
+      border-left: 4px solid #ff3e00;
+      padding: 15px;
+      margin: 30px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    code {
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+
+    .accordion-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+  </style>
+  
+  <script type="module" src="./components/native-accordion.js"></script>
 </head>
 <body>
-  <div id="app">
-    <h1>Web Components Nativos</h1>
-    <p>Esta página mostrará componentes web nativos.</p>
-    <a href="/" class="back-link">Volver a la página principal</a>
-  </div>
-  <script type="module" src="./main.js"></script>
+  <div class="container">
+    <header>
+      <h1>Musify - Michael Jackson</h1>
+      <p class="description">Descubre la vida y obra del Rey del Pop con nuestros componentes web nativos</p>
+    </header>
+
+    <div class="explanation">
+      <h3>Michael Jackson: El Rey del Pop</h3>
+      <p>Michael Joseph Jackson (29 de agosto de 1958 - 25 de junio de 2009) fue un cantante, compositor, bailarín y filántropo estadounidense conocido como el <strong>Rey del Pop</strong>. Transformó la industria musical y se convirtió en una de las figuras más influyentes del siglo XX.</p>
+      <ul>
+        <li>Vendió más de 400 millones de discos en todo el mundo</li>
+        <li>Ganó 13 premios Grammy y fue nominado 38 veces</li>
+        <li>Su álbum "Thriller" es el disco más vendido de todos los tiempos</li>
+        <li>Revolucionó los videos musicales con producciones cinematográficas</li>
+        <li>Inventó y popularizó pasos de baile icónicos como el "moonwalk"</li>
+      </ul>
+    </div>
+
+    <div class="component-section">
+      <h2 class="component-title">Descubre a Michael Jackson</h2>
+      <p>Haz clic en los encabezados para conocer más sobre el Rey del Pop:</p>
+      
+      <div class="accordion-container">
+        <native-accordion title="Carrera musical y éxitos">
+          <p>La carrera musical de Michael Jackson abarca más de cuatro décadas, desde sus inicios con los Jackson 5 hasta convertirse en el artista solista más exitoso de todos los tiempos.</p>
+          <ul>
+            <li><strong>Jackson 5 (1964-1975)</strong>: Comenzó su carrera a los 5 años junto a sus hermanos, convirtiéndose rápidamente en la estrella principal del grupo</li>
+            <li><strong>Carrera en solitario (1971-2009)</strong>: Lanzó 10 álbumes de estudio como solista</li>
+            <li><strong>Éxitos principales</strong>: "Thriller", "Billie Jean", "Beat It", "Bad", "Smooth Criminal", "Black or White", "Earth Song"</li>
+            <li><strong>Récords</strong>: El álbum "Thriller" permaneció 37 semanas en el número 1 del Billboard 200 y fue el primer álbum en producir siete sencillos Top 10</li>
+            <li><strong>Giras mundiales</strong>: Sus giras "Bad World Tour", "Dangerous World Tour" e "HIStory World Tour" batieron récords de asistencia</li>
+          </ul>
+        </native-accordion>
+        
+        <native-accordion title="Innovaciones y contribuciones artísticas">
+          <p>Michael Jackson revolucionó la industria musical y del entretenimiento con sus innovaciones artísticas y visuales.</p>
+          <ul>
+            <li><strong>Videos musicales</strong>: Transformó los videos musicales en producciones cinematográficas de alto presupuesto</li>
+            <li><strong>Coreografías icónicas</strong>: Creó pasos de baile revolucionarios como el moonwalk, el robot y el lean</li>
+            <li><strong>Espectáculos en vivo</strong>: Sus presentaciones combinaban música, baile, efectos especiales y narración visual</li>
+            <li><strong>Fusión de géneros</strong>: Combinó pop, rock, R&B, soul, funk y música clásica en su trabajo</li>
+            <li><strong>Producción musical</strong>: Introdujo técnicas innovadoras de producción y grabación en colaboración con Quincy Jones</li>
+          </ul>
+        </native-accordion>
+        
+        <native-accordion title="Impacto cultural y legado">
+          <p>El impacto de Michael Jackson va más allá de la música, influyendo en la cultura global de formas sin precedentes.</p>
+          <ul>
+            <li><strong>Diversidad racial</strong>: Ayudó a romper barreras raciales en MTV y la industria musical</li>
+            <li><strong>Influencia global</strong>: Su impacto se extendió por todo el mundo, desde África hasta Asia</li>
+            <li><strong>Filantropía</strong>: Donó más de 300 millones de dólares a causas benéficas durante su vida</li>
+            <li><strong>Moda</strong>: Sus estilos icónicos como el guante con brillantes, las chaquetas militares y los pantalones cortos se convirtieron en tendencias mundiales</li>
+            <li><strong>Nuevas generaciones</strong>: Sigue influyendo en artistas contemporáneos como Bruno Mars, The Weeknd, Beyoncé y la industria K-pop</li>
+          </ul>
+        </native-accordion>
+      </div>
 </body>
 </html>

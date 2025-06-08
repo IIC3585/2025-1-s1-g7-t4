@@ -3,18 +3,20 @@ import litLogo from './lit.svg'
 import webComponentsLogo from './webcomponents.svg'
 
 document.querySelector('#app').innerHTML = `
-  <div>
-  <h1>Web Components Demo</h1>
-    <a href="/native-components" target="_blank">
-      <img src="${webComponentsLogo}" class="logo" alt="Web Components logo" />
-    </a>
-    <a href="/lit-components" target="_blank">
-      <img src="${litLogo}" class="logo lit" alt="Lit logo" />
-    </a>
+  <div class="main-container">
+    <h1>Web Components Demo</h1>
+    <div class="logo-container">
+      <a href="./native-components/" class="logo-link">
+        <img src="${webComponentsLogo}" class="logo" alt="Web Components logo" />
+        <span class="logo-label">Web Components Nativos</span>
+      </a>
+      <a href="./lit-components/" class="logo-link">
+        <img src="${litLogo}" class="logo lit" alt="Lit logo" />
+        <span class="logo-label">Lit Components</span>
+      </a>
+    </div>
     <p class="read-the-docs">
       Haz clic en las imágenes para ver los componentes web nativos y desarrollados con Lit.
     </p>
   </div>
 `
-
-setupCounter(document.querySelector('#counter'))
