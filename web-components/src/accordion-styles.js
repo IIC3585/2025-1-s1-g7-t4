@@ -77,7 +77,7 @@ export const getAccordionStyles = (options = {}) => {
     
     :host([open]) .accordion-content {
       padding: 15px 20px;
-      max-height: 500px;
+      max-height: 1000px;
     }
     
     /* Estilos responsivos para dispositivos móviles */
