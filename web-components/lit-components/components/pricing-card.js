@@ -1,5 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from 'https://unpkg.com/lit@2.8.0/index.js?module';
-import { getSuscriptionStyles } from '../../src/suscription-styles.js';
+import { getSubscriptionStyles } from '../../src/subscription-styles.js';
 export class PricingCard extends LitElement {
   static properties = {
     title: { type: String },
@@ -11,7 +11,7 @@ export class PricingCard extends LitElement {
     best: { type: Boolean },
 };
 
-   static styles = css`${unsafeCSS(getSuscriptionStyles({
+   static styles = css`${unsafeCSS(getSubscriptionStyles({
     backgroundColor: '#fff',
     softColor: '#e0e8ff',
     mainColor: '#324fff'

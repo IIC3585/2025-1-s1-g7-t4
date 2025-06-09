@@ -1,4 +1,4 @@
-export const getSuscriptionStyles = (options = {}) => {
+export const getSubscriptionStyles = (options = {}) => {
 
   const defaults = {
     backgroundColor: '#fff',

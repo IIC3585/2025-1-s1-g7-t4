@@ -1,9 +1,9 @@
-import { getSuscriptionStyles } from '../../src/suscription-styles.js';
+import { getSubscriptionStyles } from '../../src/subscription-styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-    ${getSuscriptionStyles({
+    ${getSubscriptionStyles({
     backgroundColor: '#fff',
     softColor: '#ffe6dd',
     mainColor: '#ff3e00'
