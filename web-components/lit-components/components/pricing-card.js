@@ -141,20 +141,20 @@ export class PricingCard extends LitElement {
       <div class="card">
         <div class="title">
         ${this.title}
-        ${this.best ? html`<span class="best-badge">Best</span>` : ''}
+        ${this.best ? html`<span class="best-badge">Recomendado</span>` : ''}
         </div>
         <div class="visits">${this.visits}</div>
         <div class="price">${this.price} <span class="subprice">/ mo</span></div>
         <div class="subprice">${this.vat}</div>
         <div class="description">${this.description}</div>
-        <div class="button" @click="${this.handleClick}">Get started</div>
+        <div class="button" @click="${this.handleClick}">Comenzar</div>
         <ul class="features">
           ${this.features.map(f => {
             const [text, badge] = f.split('|');
             return html`
               <li>
                 ${text}
-                ${badge === 'new' ? html`<span class="new-badge">New</span>` : ''}
+                ${badge === 'new' ? html`<span class="new-badge">Nuevo</span>` : ''}
               </li>
             `;
           })}

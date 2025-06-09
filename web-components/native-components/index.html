@@ -10,7 +10,9 @@
       --background-color: #ffffff;
       --text-color: #213547;
     }
-    
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: var(--background-color);
       color: var(--text-color);
@@ -19,85 +21,82 @@
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      gap: 20px;
       padding: 20px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
     }
 
     h1 {
       color: #ff3e00;
-      margin-bottom: 10px;
     }
 
     .description {
       font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #ff3e00;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    .back-link:hover {
-      background-color: #d33200;
-    }
-
-    .component-section {
-      margin-bottom: 40px;
     }
 
     .component-title {
-      margin-bottom: 20px;
       padding-bottom: 10px;
       border-bottom: 1px solid #ddd;
       color: #ff3e00;
     }
-    
+
     .explanation {
       background-color: #fff4f0;
       border-left: 4px solid #ff3e00;
       padding: 15px;
-      margin: 30px 0;
       border-radius: 0 4px 4px 0;
     }
-    
-    code {
-      background-color: #eee;
-      padding: 2px 4px;
-      border-radius: 3px;
-      font-family: monospace;
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
     }
 
-    .accordion-container {
-      max-width: 800px;
-      margin: 0 auto;
+    .start-button {
+      display: inline-block;
+      font-weight: bold;
+      padding: 10px 20px;
+      background-color: #fd5e29;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .start-button:hover {
+      background-color: #ff3e00;
     }
 
   </style>
-  
+
   <script type="module" src="./components/native-accordion.js"></script>
+  <script type="module" src="./components/pricing-card.js"></script>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Musify - Michael Jackson</h1>
-      <p class="description">Descubre la vida y obra del Rey del Pop con nuestros componentes web nativos</p>
+      <h1>♫ Musify</h1>
+      <p class="description">Disfruta de la música de tus artistas favoritos y aprende de su historia.</p>
     </header>
 
+    <a href="#suscripciones" class="start-button">Comenzar a escuchar</a>
+
     <div class="explanation">
-      <h3>Michael Jackson: El Rey del Pop</h3>
+      <h3>♪ Artista Destacado</h3>
+      <h1>Michael Jackson: El Rey del Pop</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Michael_Jackson_in_1988.jpg/285px-Michael_Jackson_in_1988.jpg" alt="Jackson performing in Vienna, Austria, 1988" style="width: 300px; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       <p>Michael Joseph Jackson (29 de agosto de 1958 - 25 de junio de 2009) fue un cantante, compositor, bailarín y filántropo estadounidense conocido como el <strong>Rey del Pop</strong>. Transformó la industria musical y se convirtió en una de las figuras más influyentes del siglo XX.</p>
       <ul>
         <li>Vendió más de 400 millones de discos en todo el mundo</li>
@@ -109,9 +108,9 @@
     </div>
 
     <div class="component-section">
-      <h2 class="component-title">Descubre a Michael Jackson</h2>
+      <h2 class="component-title">♪ Descubre a Michael Jackson</h2>
       <p>Haz clic en los encabezados para conocer más sobre el Rey del Pop:</p>
-      
+
       <div class="accordion-container">
         <native-accordion title="Carrera musical y éxitos">
           <p>La carrera musical de Michael Jackson abarca más de cuatro décadas, desde sus inicios con los Jackson 5 hasta convertirse en el artista solista más exitoso de todos los tiempos.</p>
@@ -123,7 +122,7 @@
             <li><strong>Giras mundiales</strong>: Sus giras "Bad World Tour", "Dangerous World Tour" e "HIStory World Tour" batieron récords de asistencia</li>
           </ul>
         </native-accordion>
-        
+
         <native-accordion title="Innovaciones y contribuciones artísticas">
           <p>Michael Jackson revolucionó la industria musical y del entretenimiento con sus innovaciones artísticas y visuales.</p>
           <ul>
@@ -134,7 +133,7 @@
             <li><strong>Producción musical</strong>: Introdujo técnicas innovadoras de producción y grabación en colaboración con Quincy Jones</li>
           </ul>
         </native-accordion>
-        
+
         <native-accordion title="Impacto cultural y legado">
           <p>El impacto de Michael Jackson va más allá de la música, influyendo en la cultura global de formas sin precedentes.</p>
           <ul>
@@ -146,5 +145,62 @@
           </ul>
         </native-accordion>
       </div>
+
+      <div class="subscription-section" id="suscripciones">
+        <h2 class="component-title">♪ Comienza a escuchar</h2>
+        <p>Selecciona el plan que mejor se adapte a tu estilo de vida musical.</p>
+        <div class="card-container">
+          <pricing-card
+            title="Gratis"
+            visits="Escucha con anuncios"
+            price="$0"
+            vat="Incluye IVA"
+            description="Accede a millones de canciones con interrupciones publicitarias."
+            features='[
+              "Reproducción aleatoria",
+              "Listas de reproducción públicas",
+              "Calidad estándar",
+              "Acceso móvil y web",
+              "Límite de saltos de canción"
+            ]'
+          ></pricing-card>
+          <pricing-card
+            title="Premium"
+            visits="Sin anuncios - Escucha ilimitada"
+            price="$5,99"
+            vat="Incluye IVA"
+            description="La mejor experiencia para los amantes de la música."
+            best="true"
+            features='[
+              "Reproducción sin conexión",
+              "Saltos ilimitados",
+              "Calidad de audio mejorada",
+              "Sin anuncios",
+              "Control total de reproducción"
+            ]'
+          ></pricing-card>
+          <pricing-card
+            title="Familiar"
+            visits="Hasta 6 cuentas"
+            price="$9,99"
+            vat="Incluye IVA"
+            description="Disfruta de la música en familia, cada uno con su perfil."
+            features='[
+              "Todas las ventajas del plan Premium",
+              "Hasta 6 cuentas individuales",
+              "Control parental",
+              "Listas compartidas|new",
+              "Ahorro mensual para grupos"
+            ]'
+          ></pricing-card>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('card-clicked', (e) => {
+        alert(`Elegiste el plan ${e.detail.title}!`);
+      });
+    </script>
 </body>
 </html>
